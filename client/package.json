@@ -1,0 +1,16 @@
+{
+  "name": "test-mithril",
+  "version": "0.1.0",
+  "description": "Test Mithril.js",
+  "main": "index.js",
+  "author": "Wink Saville",
+  "license": "Unlicense",
+  "dependencies": {
+    "mithril": "^1.0.0",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "build": "webpack src/index.js dist/client.js",
+    "start:dev": "webpack src/index.js dist/client.js -d --watch"
+  }
+}
