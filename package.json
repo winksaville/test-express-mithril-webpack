@@ -1,17 +1,13 @@
 {
   "name": "test-express-mithril-webpack",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Test Express Mithril and Webpack",
+  "author": "Wink Saville",
+  "license": "Unlicense",
   "scripts": {
-    "start": "node ./bin/www"
-  },
-  "dependencies": {
-    "body-parser": "~1.16.0",
-    "cookie-parser": "~1.4.3",
-    "debug": "~2.6.0",
-    "express": "~4.14.1",
-    "morgan": "~1.7.0",
-    "pug": "~2.0.0-beta10",
-    "serve-favicon": "~2.3.2"
+    "install": "(cd client && yarn install) && (cd server && yarn install)",
+    "build": "(cd client && yarn build) && (cd server && yarn build)",
+    "start:server": "(cd server && yarn start)",
+    "start:client": "chromium http://localhost:3000"
   }
 }
