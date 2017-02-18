@@ -8,6 +8,6 @@
     "install": "(cd client && yarn install) && (cd server && yarn install)",
     "build": "(cd client && yarn build) && (cd server && yarn build)",
     "start:server": "(cd server && yarn start)",
-    "start:client": "chromium http://localhost:3000"
+    "start:client": "(cd client && yarn start:dev)"
   }
 }
