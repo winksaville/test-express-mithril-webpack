@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "build": "# server -- currently nothing to build",
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "start:dev": "nodemon ./bin/www",
+    "start:dgb": "nodemon --inspect ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
@@ -15,5 +17,8 @@
     "morgan": "~1.7.0",
     "pug": "~2.0.0-beta10",
     "serve-favicon": "~2.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
   }
 }
