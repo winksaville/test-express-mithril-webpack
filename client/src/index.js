@@ -2,6 +2,28 @@ console.log('index.js:+');
 
 var m = require('mithril');
 
+var ws = new WebSocket('wss://echo.websocket.org');
+
+ws.onopen = function(evt) {
+  console.log('ws.onopen: connected evt=' + JSON.stringify(evt));
+  let now = Date.now();
+  ws.send(now);
+};
+
+ws.onclose = function(evt) {
+  console.log('ws.onclose: disconnected evt=' + JSON.stringify(evt));
+};
+
+ws.onmessage = function (evt) {
+  let now = Date.now();
+  console.log('ws.onmessage: evt=' + JSON.stringify(evt)
+    + ' RTT=' + (now - evt.data) + 'ms');
+};
+
+ws.onerror = function(evt) {
+  console.log('ws.onerror: evt=' + JSON.stringify(evt));
+};
+
 function getField(field_id) {
   var text = document.getElementById(field_id).value;
   console.log('getField: field_id=' + field_id + ' text=' + text);
