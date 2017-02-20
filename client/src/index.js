@@ -2,7 +2,7 @@ console.log('index.js:+');
 
 var m = require('mithril');
 
-var ws = new WebSocket('wss://echo.websocket.org');
+var ws = new WebSocket('ws://localhost:3000/websock/echo');
 
 ws.onopen = function(evt) {
   console.log('ws.onopen: connected evt=' + JSON.stringify(evt));
